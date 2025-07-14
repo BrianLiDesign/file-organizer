@@ -13,7 +13,6 @@ for file in files:
     file_path = os.path.join(path, file)
     
     if os.path.isfile(file_path):
-        # Get the file extension
         ext = file.split('.')[-1] if '.' in file else 'no_extension'
         
         # Create a directory for the extension if it doesn't exist
@@ -24,5 +23,5 @@ for file in files:
         # Move the file to the corresponding directory
         shutil.move(file_path, os.path.join(ext_dir, file))
         print(f"Moved {file} to {ext_dir}")
-        
+
 print("Files have been organized by their extensions.")
